@@ -1,0 +1,58 @@
+[project]
+name = "academic-paper-the-pre-fomc-announcement-drift-replication"
+version = "0.1.0"
+description = "Replication of Lucca and Moench (2015), \"The Pre-FOMC Announcement Drift,\" with the main result extended through 2026"
+authors = [
+    { name = "Jared Szajkowski" },
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    # Pipeline and configuration
+    "doit",
+    "jupyter",
+    "python-decouple",
+
+    # Data sources
+    "databento",  # E-mini S&P 500 futures (GLBX.MDP3)
+    "pandas-datareader",  # Ken French's data library
+    "pdfplumber",  # FOMC meeting dates from the Internet Appendix PDF
+    "requests",  # FOMC calendar from the Federal Reserve Board website
+    "setuptools",  # pandas-datareader still imports distutils (removed in Python 3.12)
+    "wrds",  # CRSP and Daily TAQ
+
+    # Analysis and output
+    "matplotlib",
+    "numpy",
+    "pandas>=3.0.3",
+    "pyarrow",
+    "statsmodels",
+]
+
+[dependency-groups]
+dev = [
+    "jupytext",
+    "pytest",
+    "ruff",
+]
+
+[project.urls]
+Repository = "https://github.com/jaredszajkowski/academic-paper-the-pre-fomc-announcement-drift-replication"
+Paper = "https://doi.org/10.1111/jofi.12196"
+
+[tool.uv]
+# src/ is a flat directory of scripts, not an installable package
+package = false
+
+[tool.pytest.ini_options]
+# testpaths = ["src"]
+
+[tool.ruff]
+# line-length = 88
+
+[tool.ruff.lint]
+# select = ["E", "F", "I"]
+
+# Note: To ignore the .venv folder in Dropbox, run the following:
+# $ mkdir -p .venv
+# $ attr -s com.dropbox.ignored -V 1 .venv
