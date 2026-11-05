@@ -10,6 +10,8 @@ The daily half of the replication needs only a calendar and CRSP. The intraday h
 
 **Paper PDF:** [`references/LuccaMoench2015PreFOMCAnnouncementDrift.pdf`](references/LuccaMoench2015PreFOMCAnnouncementDrift.pdf) (New York Fed Staff Report 512)
 
+**Internet Appendix:** [`references/jofi12196-sup-0001-appendix.pdf`](references/jofi12196-sup-0001-appendix.pdf) (bootstrap analyses and additional figures and tables)
+
 ## Status
 
 Replication work has not started. The repo currently holds a project template: `dodo.py` still defines tasks from earlier coursework, and the `reports/` files are template examples.
@@ -42,7 +44,7 @@ The paper's intraday data come from Thomson Reuters TickHistory and Tickdata.com
 ### Directory structure
 
 - `src/`: source code. `src/settings.py` loads paths and other settings, and other scripts should get them by importing `config` from it.
-- `references/`: the paper.
+- `references/`: the paper and its internet appendix.
 - `reports/`: LaTeX sources for reports and slides.
 - `_data/`: pulled data. Not tracked by Git, and safe to delete because the code can pull it again.
 - `_output/`: generated tables, figures, and dataframes. Not tracked by Git, and safe to delete because the code can regenerate it.
